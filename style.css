@@ -396,22 +396,11 @@ body {
   text-align: center;
 }
 
-main {
-  margin: 0 auto;
-  max-width: 140rem;
-  padding: 0 1.6rem;
-}
-
-@media screen and (min-width: 576px) {
-  main {
-    padding: 0 4rem;
-  }
-}
-
 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: bottom;
 }
 
 /* 
@@ -449,6 +438,7 @@ a:focus {
 }
 
 .btn {
+  display: inline-block;
   padding: 1.2rem 2.4rem;
   border-radius: 1.6rem;
   border: 1px solid var(--base-black);
@@ -471,6 +461,10 @@ a:focus {
     ==========================================================================    
 */
 .header {
+  max-width: 150rem;
+  margin-top: 2.4rem;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 1.6rem;
 }
 
@@ -480,6 +474,115 @@ a:focus {
   }
 }
 
+.header__logo__image {
+  max-width: 16rem;
+  margin-bottom: 3.2rem;
+}
+
+.header__logo__lang {
+  display: block;
+  margin: 0 auto 3.2rem auto;
+  max-width: 2.4rem;
+}
+/* height: 1056px; width 1536px */
+
 .header__logo h1 {
   display: none;
+}
+
+.header__image {
+  height: clamp(30rem, 24rem + 30vw, 60rem);
+}
+
+/* 
+    ==========================================================================
+    MAIN 
+    ==========================================================================    
+*/
+main {
+  margin: 0 auto;
+  max-width: 120rem;
+  padding: 0 1.6rem;
+}
+
+@media screen and (min-width: 576px) {
+  main {
+    padding: 0 4rem;
+  }
+}
+
+/* 
+    ==========================================================================
+    INTRO + TESTIMONIALS 
+    ==========================================================================    
+*/
+.intro,
+.testimonials {
+  margin-top: clamp(10rem, 8rem + 10vw, 20rem);
+  margin-bottom: clamp(10rem, 7rem + 15vw, 25rem);
+}
+
+.intro p,
+.testimonials p {
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.intro .btn {
+  margin-top: 3.2rem;
+}
+
+/* 
+    ==========================================================================
+    SHOWCASE 
+    ==========================================================================    
+*/
+.showcase__item {
+  margin-top: clamp(10rem, 8rem + 10vw, 20rem);
+  margin-bottom: clamp(10rem, 7rem + 15vw, 25rem);
+}
+
+.showcase__item img {
+  /* aspect-ratio: 3/1.5; */
+  height: clamp(20rem, 12rem + 40vw, 60rem);
+}
+
+/* 
+    ==========================================================================
+    CONTACT 
+    ==========================================================================    
+*/
+.contact {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.2rem;
+  margin-bottom: clamp(10rem, 7rem + 15vw, 25rem);
+}
+
+@media screen and (min-width: 992px) {
+  .contact {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* 
+    ==========================================================================
+    FAQ 
+    ==========================================================================    
+*/
+.faq {
+  margin-bottom: clamp(10rem, 7rem + 15vw, 25rem);
+}
+
+.faq__item {
+  max-width: 64rem;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.faq__item summary {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  cursor: pointer;
 }
